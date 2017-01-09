@@ -11,6 +11,7 @@ var bz2 = require('unbzip2-stream');
 var helper = require('./es-helper');
 var program = require('commander');
 var elasticsearch = require('elasticsearch');
+var kue = require('kue');
 var client = new elasticsearch.Client({
   host: 'localhost:9200'
   // log: 'trace'
@@ -41,7 +42,7 @@ lang = lang[1] || '-'
 // Connect to mongo
 
 // var url = 'mongodb://localhost:27017/' + lang + '_wikipedia';
-var index = lang + '_wikipedia';
+var index = lang + '_wikipedia3';
 // var index = 'af_wikipedia';
 
 // var collection = db.collection('wikipedia');
