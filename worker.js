@@ -25,16 +25,10 @@ if (cluster.isMaster) {
 } else {
   // url should be improved by configuration or cli arguments
   // var url = 'mongodb://localhost:27017/wikipedia_queue';
-  queue.process('import', concurrency, function (job, done) {
-    var data = job.data;
-    client.create(data, function (error, response) {
-      if (error) {
-        done(error);
-        console.error(error);
-        return;
-      } else {
-        done();
-      }
+  queue.process('article', concurrency, function (job, done) {
+
+    helper.esProcessScript(job, function (err, res) {
+      done(err, res);
     });
   });
   // MongoClient.connect(url, function(err, db) {

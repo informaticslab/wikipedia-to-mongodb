@@ -15,6 +15,7 @@
     "node = 0.10.33"
   ],
   "dependencies": {
+    "byline": "^5.0.0",
     "cluster": "^0.7.7",
     "commander": "^2.9.0",
     "elasticsearch": "^12.1.3",
